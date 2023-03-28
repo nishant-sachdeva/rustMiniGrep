@@ -1,6 +1,5 @@
 fn main() {
-    let args: Vec<String> = std::env::args().collect();
-    let config = match minigrep::Config::build(&args) {
+    let config = match minigrep::Config::build(std::env::args()) {
         Ok(config) => config,
         Err(err) => {
             eprintln!("Error: {}", err);
